@@ -24,17 +24,23 @@ const Support = () => {
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
         <div className="border flex items-center gap-4 cursor-pointer p-2 justify-center hover:bg-[#e4853f] hover:text-white hover:transition ease-in-out delay-250">
           <img src={user} alt="not found" className="h-8 w-8" />
-          <div className="font-['Poppins']">24 x 7 FREE SUPPORT</div>
+          <div className="font-['Poppins'] font-semibold">
+            24 x 7 FREE SUPPORT
+          </div>
         </div>
 
         <div className="border flex items-center gap-4 cursor-pointer p-2 justify-center hover:bg-[#e4853f] hover:text-white hover:transition ease-in-out delay-250">
           <img src={money} alt="not found" className="h-8 w-8" />
-          <div className="font-['Poppins']">MONEY BACK GURANTEE</div>
+          <div className="font-['Poppins'] font-semibold">
+            MONEY BACK GURANTEE
+          </div>
         </div>
 
         <div className="border flex items-center gap-4 cursor-pointer p-2 justify-center hover:bg-[#e4853f] hover:text-white hover:transition ease-in-out delay-250">
           <img src={freeDelivery} alt="not found" className="h-8 w-8" />
-          <div className="font-['Poppins']">24 X 7 FREE DELIVERY</div>
+          <div className="font-['Poppins'] font-semibold">
+            24 X 7 FREE DELIVERY
+          </div>
         </div>
       </div>
 
@@ -56,7 +62,9 @@ const Support = () => {
               alt="not found"
               className="cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-90 h-80 mx-auto"
             />
-            <div className="font-['Poppins'] pt-4">{elem.title}</div>
+            <div className="font-['Poppins'] pt-4 text-gray-400">
+              {elem.title}
+            </div>
           </div>
         ))}
       </div>

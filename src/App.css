@@ -1,15 +1,4 @@
-/**
- * /* #Mega Menu Styles
- *   if you use sass, convert all this additional css to tailwindcss using the 'hack' @apply for all element.style (css properties)
- * [ https://tailwindcss.com/docs/functions-and-directives/#apply ]
- * example:
- *   .mega-menu {
- *   }
- *   ––––––––––––––––––––––––––––––––––––––––––––––––––
- *
- * @format
- * @apply hidden left-0 absolute text-left w-full;
- */
+/** @format */
 
 .mega-menu {
   display: none;
@@ -68,4 +57,32 @@
   padding-left: 6px;
   position: relative;
   top: -1px;
+}
+
+.stroke-text {
+  color: black;
+  font-size: 72px;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.stroke-text-offer {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.offer-section {
+  background-image: url("../src/assets/cms-banner1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.alice-carousel__dots {
+  margin: unset !important;
+}
+
+.alice-carousel__stage-item {
+  height: 550px !important;
 }
