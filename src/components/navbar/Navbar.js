@@ -12,8 +12,10 @@ import { Transition } from "@headlessui/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState([]);
+  const [language, setLanguage] = useState([{ image: uk, lang: "English" }]);
+  const [money, setMoney] = useState([{ name: "Us-dollar" }]);
 
+  //  for language
   const arr = [
     {
       id: uuidv4(),
@@ -33,12 +35,33 @@ const Navbar = () => {
     },
   ];
 
+  // for set selected money
+  const amount = [
+    {
+      id: uuidv4(),
+      name: "Euro",
+    },
+
+    {
+      id: uuidv4(),
+      name: "Dollar",
+    },
+  ];
+
+  // for country
   const handleChange = (el) => {
     const getSelectedLang = arr.filter((elem) => elem.id === el.id);
     setLanguage(getSelectedLang);
   };
   const getLang = language.map((el) => el.lang);
   const getImg = language.map((el) => el.image);
+
+  // for selected name
+  const handleSelectedSource = (el) => {
+    const getAmount = amount.filter((elem) => elem.id === el.id);
+    setMoney(getAmount);
+  };
+  const setName = money.map((el) => el.name);
 
   return (
     <div className="flex items-center justify-between gap-6">
@@ -49,16 +72,6 @@ const Navbar = () => {
             <span className="ml-2">{getLang}</span>
           </button>
 
-          {/* {language ? (
-              <img src={getImg} alt="not found" className="inline-block" />
-            ) : (
-              <img src={uk} alt="not found" className="inline-block" />
-            )}
-            {language ? (
-              <span className="ml-2">{getLang}</span>
-            ) : (
-              <span className="ml-2">English</span>
-            )}*/}
           <nav
             tabindex="0"
             className=" bg-white invisible w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1 z-[999] mt-2"
@@ -85,29 +98,23 @@ const Navbar = () => {
         <span className="hidden 2xl:flex xl:hidden lg:hidden md:hidden">|</span>
         <div className="group relative hidden 2xl:flex xl:hidden lg:hidden md:hidden">
           <button className="text-[#565555]  text-lg font-['Poppins'] font-light hover:text-[#ca8757]">
-            <span>$</span> - Dollaro Statunitense
+            <span>$</span> - {setName}
           </button>
           <nav
             tabindex="0"
-            className=" bg-white invisible w-80 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1 z-[1] mt-2"
+            className=" bg-white invisible w-80 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1 z-[999] mt-2"
           >
             <ul className="py-1">
-              <li>
-                <a
-                  href="/"
-                  className="block px-4 py-2 hover:bg-[#e4853f] hover:text-white font-['Poppins'] text-[#565555]"
-                >
-                  <span>$</span> - Dollaro Statunitense
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="block px-4 py-2 hover:bg-[#e4853f] hover:text-white font-['Poppins'] text-[#565555]"
-                >
-                  <span>$</span> - Euro
-                </a>
-              </li>
+              {amount.map((el) => (
+                <li key={el.id} onClick={() => handleSelectedSource(el)}>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 hover:bg-[#e4853f] hover:text-white font-['Poppins'] text-[#565555]"
+                  >
+                    <span>$</span> - {el.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
