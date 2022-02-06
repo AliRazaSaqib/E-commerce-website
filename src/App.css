@@ -97,3 +97,60 @@
 .women-catagory {
   transition: 1s ease;
 }
+
+.new-banner {
+  background-image: url("../src/assets/newsletter-bkg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 252px;
+}
+
+@media (max-width: 1280px) {
+  .catagories {
+    flex-direction: column;
+  }
+  .womenCatagory,
+  .menCatagory {
+    justify-content: center;
+  }
+
+  .menCatagory {
+    padding-top: 34px;
+  }
+}
+
+@media (max-width: 767px) {
+  .womenCatagory .list,
+  .menCatagory .list {
+    max-width: 16rem;
+  }
+  .womenCatagory h1,
+  .menCatagory h1 {
+    font-size: 2rem;
+  }
+  .subscribe-banner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  .womenCatagory,
+  .menCatagory {
+    flex-direction: column;
+    align-items: center;
+  }
+  .offer-section {
+    flex-direction: column;
+    gap: 34px;
+  }
+  .offer {
+    -webkit-text-stroke-color: black;
+  }
+  .mobile-view {
+    position: absolute;
+    top: 116px;
+    left: 116px;
+  }
+}

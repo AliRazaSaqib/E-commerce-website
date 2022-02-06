@@ -8,7 +8,7 @@ import clientIMg from "../../../assets/umer.png";
 export default function Opnions() {
   return (
     <div className="text-center">
-      <h1 className=" font-['Poppins'] text-black font-bold text-5xl">
+      <h1 className=" font-['Poppins'] text-black font-bold 2xl:text-5xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-4xl text-4xl text-center">
         WHAT PEOPLE SAY'S
       </h1>
       <Carousel

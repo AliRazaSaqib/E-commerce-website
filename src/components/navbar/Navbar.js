@@ -63,6 +63,10 @@ const Navbar = () => {
   };
   const setName = money.map((el) => el.name);
 
+  // for search
+  const handleSearch = () => {
+    console.log("srch");
+  };
   return (
     <div className="flex items-center justify-between gap-6">
       <div className="py-4 flex gap-4">
@@ -95,8 +99,10 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <span className="hidden 2xl:flex xl:hidden lg:hidden md:hidden">|</span>
-        <div className="group relative hidden 2xl:flex xl:hidden lg:hidden md:hidden">
+        <span className="hidden 2xl:flex xl:flex lg:hidden md:hidden sm:hidden">
+          |
+        </span>
+        <div className="group relative hidden 2xl:flex xl:flex lg:hidden md:hidden sm:hidden">
           <button className="text-[#565555]  text-lg font-['Poppins'] font-light hover:text-[#ca8757]">
             <span>$</span> - {setName}
           </button>
@@ -120,13 +126,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className="relative bg-white border-gray-300 text-gray-900 z-[1]">
+      <nav className="bg-white border-gray-300 text-gray-900 z-[1] mobile-view">
         <div className="max-w-7x2 container mx-auto">
           <div className="container mx-auto flex justify-between">
             <ul className="flex items-center gap-10 hidden md:hidden lg:hidden xl:flex 2xl:flex">
               <li className="hoverable hover:text-[#e4853f]">
                 <a
-                  href="/"
+                  href="#"
                   className="relative block  text-sm lg:text-base after:hidden text-[#565555] font-semibold  transition-all"
                 >
                   FASHION
@@ -213,7 +219,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="#"
                   className=" text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
                   FASHION
@@ -222,7 +228,7 @@ const Navbar = () => {
 
               <li className="text-black hover:text-[#e4853f]">
                 <a
-                  href="/"
+                  href="#"
                   className="text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
                   ELECTRONICS
@@ -231,7 +237,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="#"
                   className="text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
                   BABY AND KINDS
@@ -240,7 +246,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="#"
                   className="text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
                   FASHION
@@ -249,7 +255,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="#"
                   className=" text-sm lg:text-base  hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
                   AUTOMOBILE
@@ -309,11 +315,11 @@ const Navbar = () => {
           enterFrom="opacity-0 scale-95"
         >
           <div className="md:hidden" id="mobile-menu">
-            <div className="pt-12 pb-3 space-y-1 sm:px-3">
+            <div className="pt-12 p-10 pb-3 space-y-1 sm:px-3 shadow-sm shadow-[#e4853f]">
               <ul className="flex flex-col items-start gap-10 md:hidden">
                 <li className="hoverable hover:text-[#e4853f]">
                   <a
-                    href="/"
+                    href="#"
                     className="relative block  text-sm lg:text-base after:hidden text-[#565555] font-semibold  transition-all"
                   >
                     FASHION
@@ -400,7 +406,7 @@ const Navbar = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="#"
                     className=" text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                   >
                     FASHION
@@ -409,7 +415,7 @@ const Navbar = () => {
 
                 <li className="text-black hover:text-[#e4853f]">
                   <a
-                    href="/"
+                    href="#"
                     className=" text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                   >
                     ELECTRONICS
@@ -418,7 +424,7 @@ const Navbar = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="#"
                     className=" text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                   >
                     BABY AND KINDS
@@ -427,7 +433,7 @@ const Navbar = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="#"
                     className=" text-sm lg:text-base font-semibold  text-[#565555]  transition-all"
                   >
                     FASHION
@@ -436,7 +442,7 @@ const Navbar = () => {
 
                 <li>
                   <a
-                    href="/"
+                    href="#"
                     className=" text-sm lg:text-base  hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                   >
                     AUTOMOBILE
@@ -452,7 +458,7 @@ const Navbar = () => {
       </div>
 
       <div className="2xl:hidden xl:hidden flex gap-6 ml-auto">
-        <i className="fa fa-search text-2xl"></i>
+        <i className="fa fa-search text-2xl" onClick={handleSearch}></i>
         <i className="fa fa-user text-2xl"></i>
         <i className="fa fa-shopping-cart text-2xl"></i>
       </div>

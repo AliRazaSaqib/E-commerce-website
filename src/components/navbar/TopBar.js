@@ -22,12 +22,12 @@ function TopBar() {
           </button>
         </div>
 
-        <div className="flex items-center gap-4 hidden lg:hidden xl:hidden 2xl:flex">
-          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
-            <i className="fa fa-phone text-2xl"></i>
+        <div className="flex items-center gap-4 hidden lg:hidden xl:flex md:hidden 2xl:flex">
+          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-10 w-10 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
+            <i className="fa fa-phone text-xl"></i>
           </div>
           <div>
-            <div className="text-lg font-['Poppins'] font-medium hover:text-[#e4853f]">
+            <div className="text-md font-['Poppins'] font-medium hover:text-[#e4853f]">
               CALL US NOW
             </div>
             <div className="text-xs text-gray-500 font-['Poppins']">
@@ -36,12 +36,12 @@ function TopBar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 hidden lg:hidden xl:hidden 2xl:flex">
-          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
-            <i className="fa fa-user text-2xl"></i>
+        <div className="flex items-center gap-4 hidden lg:hidden xl:flex md:hidden 2xl:flex">
+          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-10 w-10 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
+            <i className="fa fa-user text-xl"></i>
           </div>
           <div>
-            <div className="text-lg font-['Poppins'] font-medium hover:text-[#e4853f]">
+            <div className="text-md font-['Poppins'] font-medium hover:text-[#e4853f]">
               My Account
             </div>
             <div className="text-xs text-gray-500 font-['Poppins']">
@@ -50,12 +50,12 @@ function TopBar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 hidden lg:hidden xl:hidden 2xl:flex">
-          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-12 w-12 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
-            <i className="fa fa-shopping-cart text-2xl"></i>
+        <div className="flex items-center gap-4 hidden lg:hidden xl:flex md:hidden 2xl:flex">
+          <div className="rounded-full text-[#e4853f] border-solid border border-gray-200 h-10 w-10 flex items-center justify-center cursor-pointer hover:bg-[#e4853f] hover:text-white">
+            <i className="fa fa-shopping-cart text-xl"></i>
           </div>
           <div>
-            <div className="text-lg font-['Poppins'] font-medium hover:text-[#e4853f]">
+            <div className="text-md font-['Poppins'] font-medium hover:text-[#e4853f]">
               Shooping Cart
             </div>
             <div className="text-xs text-gray-500 font-['Poppins']">

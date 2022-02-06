@@ -53,7 +53,7 @@ const TopProducts = () => {
 
   return (
     <div className="pt-12">
-      <h1 className="font-['Poppins'] text-5xl font-bold text-center">
+      <h1 className="font-['Poppins'] font-bold 2xl:text-5xl xl:text-5xl lg:text-4xl md:text-4xl sm:text-4xl text-4xl text-center">
         TOP PRODUCTS
       </h1>
 
