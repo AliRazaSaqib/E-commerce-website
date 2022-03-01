@@ -3,11 +3,18 @@
 import { useState, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import StarRatings from "react-star-ratings";
-import "../../App.css";
+import "../../../App.css";
+import { addItems } from "../../../redux/slices/AddToCart";
+
 const TopProducts = () => {
+  const dispatch = useDispatch();
   const [product, setProduct] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [item, setItems] = useState([]);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/category/women's clothing")
       .then((res) => res.json())
@@ -16,12 +23,21 @@ const TopProducts = () => {
         setLoader(false);
       });
   }, []);
-
+  console.log(product);
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
+
+  const addProductToCart = (elem) => {
+    const data = product.filter((it) => it.id === elem.id);
+    dispatch(addItems({ data: [...item, elem] }));
+    setItems([...item, elem]);
+  };
+
+  const dataRes = useSelector((state) => state.cartItems);
+  console.log(dataRes, "res");
 
   const galleryItems = product.map((elem) => (
     <div key={elem.id} className="mx-auto text-center mt-8 group">
@@ -45,7 +61,10 @@ const TopProducts = () => {
         ${elem.price}
       </div>
 
-      <button className="mt-4 p-4 mx-auto hidden group-hover:block bg-[#E4853F] rounded-md text-white font-bold hover:text-black">
+      <button
+        onClick={() => addProductToCart(elem)}
+        className="mt-4 p-4 mx-auto hidden group-hover:block bg-[#E4853F] rounded-md text-white font-bold hover:text-black"
+      >
         ADD TO CART
       </button>
     </div>

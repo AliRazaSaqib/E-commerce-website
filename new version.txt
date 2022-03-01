@@ -1,0 +1,112 @@
+/** @format */
+import women from "../../../assets/category-women.jpg";
+import men from "../../../assets/category-men.jpg";
+import arrow from "../../../assets/arrow.png";
+import React from "react";
+import "../../../App.css";
+import Products from "../../../components/productcatagory/Products";
+import { useEffect, useState } from "react";
+import { commerce } from "../../../lib/commerce";
+const MenWomenCatagory = () => {
+  const [data, setData] = useState([]);
+  const [catagory, setCatagory] = useState([]);
+
+  const fetchData = async () => {
+    const { data } = await commerce.products.list();
+    return setData(data);
+  };
+  const fetchCatogeris = async () => {
+    const { data: allCategories } = await commerce.categories.list();
+    return setCatagory(allCategories);
+  };
+  useEffect(() => {
+    fetchData();
+    fetchCatogeris();
+  }, []);
+
+  console.log("Catagory", catagory);
+
+  // Filtered items
+  const filterCatagory = data?.filter((el) =>
+    el.categories.map((elem) => elem.id === catagory[0].id)
+  );
+
+  const filterCatagoryForMen = data?.filter((el) =>
+    el.categories.map((elem) => elem.id === catagory[1].id)
+  );
+
+  console.log(
+    "data",
+    filterCatagoryForMen.map((el) => console.log(el.id))
+  );
+
+  return (
+    <>
+      <div className="catagories flex justify-between pt-16">
+        {/* women section */}
+        <div className="womenCatagory flex gap-12">
+          <img
+            src={women}
+            alt="not found"
+            className="women-catagory hover:scale-95 cursor-pointer"
+          />
+
+          <div className="list w-full max-w-[21rem]">
+            <h1 className="font-['Poppins'] text-black font-bold text-4xl">
+              THE WOMEN'S
+            </h1>
+
+            {filterCatagory.map((elem) => (
+              <ul className="pt-4 w-full max-w-[21rem]">
+                <li lassName="pt-4">
+                  <a href="#" className="flex justify-between">
+                    <span className=" font-['Poppins'] women-catagory text-[gray] font-extralight hover:text-[#e4853f] hover:ml-3">
+                      {elem.name}
+                    </span>
+                    <img
+                      src={arrow}
+                      alt="not found"
+                      className="h-6 w-6 rotate-[270deg]"
+                    />
+                  </a>
+                </li>
+              </ul>
+            ))}
+          </div>
+        </div>
+
+        {/* men section */}
+        <div className="menCatagory flex gap-12">
+          <img
+            src={men}
+            alt="not found"
+            className="women-catagory hover:scale-95 cursor-pointer"
+          />
+          <div className="list max-w-[21rem]">
+            <h1 className="font-['Poppins'] text-black font-bold text-4xl">
+              THE MEN'S
+            </h1>
+
+            <ul className="pt-4 w-full max-w-[21rem]">
+              {filterCatagoryForMen.map((elem) => (
+                <li key={elem.id} className="pt-4">
+                  <a href="#" className="flex justify-between">
+                    <span className="font-['Poppins'] women-catagory text-[gray] font-extralight hover:text-[#e4853f] hover:ml-3">
+                      {elem.name}
+                    </span>
+                    <img
+                      src={arrow}
+                      alt="not found"
+                      className="h-6 w-6 rotate-[270deg]"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+export default MenWomenCatagory;

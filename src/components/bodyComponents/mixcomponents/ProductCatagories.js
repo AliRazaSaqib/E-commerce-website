@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import MenWomenCatagory from "../../components/bodyComponents/MenWomenCatagory";
+import MenWomenCatagory from "./MenWomenCatagory";
 
 const ProductCatagories = () => {
   return (

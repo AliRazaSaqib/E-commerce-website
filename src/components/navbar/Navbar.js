@@ -9,11 +9,18 @@ import Italiano from "../../assets/5.jpg";
 import megaMenu from "../../assets/mega-menu.jpg";
 import "../../App.css";
 import { Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState([{ image: uk, lang: "English" }]);
   const [money, setMoney] = useState([{ name: "Us-dollar" }]);
+
+  const reduxData = useSelector((state) => state.cartItems);
+
+  // for counter
+  const cartCounter = reduxData.newCart.length;
 
   //  for language
   const arr = [
@@ -63,10 +70,6 @@ const Navbar = () => {
   };
   const setName = money.map((el) => el.name);
 
-  // for search
-  const handleSearch = () => {
-    console.log("srch");
-  };
   return (
     <div className="flex items-center justify-between gap-6">
       <div className="py-4 flex gap-4">
@@ -77,7 +80,7 @@ const Navbar = () => {
           </button>
 
           <nav
-            tabindex="0"
+            tabIndex="0"
             className=" bg-white invisible w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1 z-[999] mt-2"
           >
             <ul className="py-1">
@@ -107,7 +110,7 @@ const Navbar = () => {
             <span>$</span> - {setName}
           </button>
           <nav
-            tabindex="0"
+            tabIndex="0"
             className=" bg-white invisible w-80 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1 z-[999] mt-2"
           >
             <ul className="py-1">
@@ -220,9 +223,9 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className=" text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
+                  className=" text-sm lg:text-base  hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
-                  FASHION
+                  AUTOMOBILE
                 </a>
               </li>
 
@@ -249,17 +252,17 @@ const Navbar = () => {
                   href="#"
                   className="text-sm lg:text-base hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
-                  FASHION
+                  ABOUT
                 </a>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className=" text-sm lg:text-base  hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
+                <Link
+                  to="/contact"
+                  className="text-sm lg:text-base  hover:text-[#e4853f] font-semibold  text-[#565555]  transition-all"
                 >
-                  AUTOMOBILE
-                </a>
+                  Contact
+                </Link>
               </li>
             </ul>
 
@@ -453,14 +456,20 @@ const Navbar = () => {
           </div>
         </Transition>
       </nav>
-      <div className="text-[#e4853f] font-['Poppins'] hidden 2xl:flex xl:hidden lg:hidden md:hidden">
+      <div className="blink font-['Poppins'] hidden 2xl:flex xl:flex lg:hidden md:hidden sm:hidden">
         Extra 20% OFF!
       </div>
 
       <div className="2xl:hidden xl:hidden flex gap-6 ml-auto">
-        <i className="fa fa-search text-2xl" onClick={handleSearch}></i>
+        <i className="fa fa-search text-2xl"></i>
         <i className="fa fa-user text-2xl"></i>
-        <i className="fa fa-shopping-cart text-2xl"></i>
+        <Link to="/checkout">
+          <i className="fa fa-shopping-cart text-2xl cursor-pointer">
+            <div className="absolute top-[110px] ml-3 bg-[#e4853f] text-white rounded-full h-6 w-6 flex items-center justify-center text-sm font-light">
+              {cartCounter}
+            </div>
+          </i>
+        </Link>
       </div>
     </div>
   );

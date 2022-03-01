@@ -2,7 +2,6 @@
 
 .mega-menu {
   display: none;
-  left: 0;
   position: absolute;
   text-align: left;
   width: 100%;
@@ -105,6 +104,17 @@
   height: 252px;
 }
 
+.blink {
+  animation: blinker 2s linear infinite;
+  color: #e4853f;
+}
+
+@keyframes blinker {
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 1280px) {
   .catagories {
     flex-direction: column;
@@ -132,6 +142,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 24px;
+    height: 38vh;
   }
 }
 

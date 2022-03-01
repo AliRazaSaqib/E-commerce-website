@@ -2,10 +2,30 @@
 import women from "../../assets/category-women.jpg";
 import men from "../../assets/category-men.jpg";
 import arrow from "../../assets/arrow.png";
+import React from "react";
 import "../../App.css";
 import Products from "../../components/productcatagory/Products";
-
+import { useEffect, useState } from "react";
+import { commerce } from "../../lib/commerce";
 const MenWomenCatagory = () => {
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    const { data } = await commerce.products.list();
+    return setData(data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log(data);
+
+  useEffect(async () => {
+    fetch("http://run.mocky.io/v3/259fca3b-297a-4ed6-ad57-e1d49b1065e7")
+      .then((res) => ("res", res.json()))
+      .then((data) => console.log("Data", data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <div className="catagories flex justify-between pt-16">

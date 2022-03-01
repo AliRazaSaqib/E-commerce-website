@@ -4,53 +4,52 @@ import { v4 as uuidv4 } from "uuid";
 
 const Products = [
   {
-    id: uuidv4(),
     womenCatagory: [
       {
         women: "THE WOMEN'S",
         womenProducts: [
           {
-            id: uuidv4(),
+            id: 1,
             name: "Ethnic Wear",
           },
           {
-            id: uuidv4(),
+            id: 2,
             name: "Bags and Purses",
           },
           {
-            id: uuidv4(),
+            id: 3,
             name: "Nightsuits",
           },
           {
-            id: uuidv4(),
+            id: 4,
             name: "Kurtas and Kurtis",
           },
           {
-            id: uuidv4(),
+            id: 5,
             name: "Anarkali Suits",
           },
           {
-            id: uuidv4(),
+            id: 6,
             name: "Sports Wear",
           },
           {
-            id: uuidv4(),
+            id: 7,
             name: "Nightdresses",
           },
           {
-            id: uuidv4(),
+            id: 8,
             name: "Dress Material",
           },
           {
-            id: uuidv4(),
+            id: 9,
             name: "Trousers and Capris",
           },
           {
-            id: uuidv4(),
+            id: 10,
             name: "Jwellery",
           },
           {
-            id: uuidv4(),
+            id: 11,
             name: "Shorts and Skirts",
           },
         ],
@@ -61,47 +60,47 @@ const Products = [
         men: "THE MEN'S",
         menProducts: [
           {
-            id: uuidv4(),
+            id: 12,
             name: "Sweatshirts",
           },
           {
-            id: uuidv4(),
+            id: 13,
             name: "Suits & Blazers",
           },
           {
-            id: uuidv4(),
+            id: 14,
             name: "Bottom wear",
           },
           {
-            id: uuidv4(),
+            id: 15,
             name: "Footwear",
           },
           {
-            id: uuidv4(),
+            id: 16,
             name: "Sneakers",
           },
           {
-            id: uuidv4(),
+            id: 17,
             name: "Jackets",
           },
           {
-            id: uuidv4(),
+            id: 18,
             name: "Sunglasses",
           },
           {
-            id: uuidv4(),
+            id: 19,
             name: "T-Shirts",
           },
           {
-            id: uuidv4(),
+            id: 20,
             name: "Trousers",
           },
           {
-            id: uuidv4(),
+            id: 21,
             name: "Wallets & Belts",
           },
           {
-            id: uuidv4(),
+            id: 22,
             name: "Hoodies",
           },
         ],
@@ -109,11 +108,5 @@ const Products = [
     ],
   },
 ];
-
-// fetch("https://run.mocky.io/v3/23113518-9cd3-41ab-b216-8866629b56ad")
-//   .then((res) => res.json())
-//   .then((d) => console.log("data", d));
-
-// console.log("pro", Products);
 
 export default Products;

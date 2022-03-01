@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import "../../App.css";
+import "../../../App.css";
 import Fade from "react-reveal/Fade";
 
 const CmsBanner = () => {

@@ -1,19 +1,23 @@
 /** @format */
-
-import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "tw-elements";
-import { CookiesProvider } from "react-cookie";
+import { BrowserRouter as Router } from "react-router-dom";
+import { store, persistor } from "./redux/slices/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
-  <React.Fragment>
-    <CookiesProvider>
-      <App />
-    </CookiesProvider>
-  </React.Fragment>,
+  <>
+    <Router>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </Router>
+  </>,
   document.getElementById("root")
 );
 reportWebVitals();

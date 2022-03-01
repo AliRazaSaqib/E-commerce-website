@@ -1,12 +1,14 @@
 /** @format */
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const handleMoveUp = () => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="w-full pt-20">
+    <div className="w-full pt-24">
       <footer className="footer-1 bg-[#333333] py-8 sm:py-12 relative">
         <div className="container mx-auto px-8 md:px-12 lg:px-16 2xl:px-24">
           <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
@@ -116,12 +118,12 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="/location"
                     className="border-b border-solid border-transparent text-white hover:border-[#e4853f] hover:text-[#e4853f]"
                   >
-                    Locations
-                  </a>
+                    Location
+                  </Link>
                 </li>
                 <li className="mb-2">
                   <a
@@ -160,13 +162,14 @@ const Footer = () => {
                     Help Center
                   </a>
                 </li>
+
                 <li className="mb-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="/contact"
                     className="border-b border-solid border-transparent text-white hover:border-[#e4853f] hover:text-[#e4853f]"
                   >
-                    Contact Us
-                  </a>
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </div>
